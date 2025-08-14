@@ -72,7 +72,7 @@
         Analyse de Pertu – ML & Détection d’anomalies
       </h1>
       <p class="mt-3 text-gray-600 max-w-3xl">
-        Application d’analyse et de comparaison de Pertu : suivi des courants triphasés (FFT 50/60&nbsp;Hz, déphasages, amplitudes), apprentissage des comportements normaux sur capteurs (pression, conductivité, débit) et détection d’anomalies pour la maintenance préventive/prédictive.
+        Application d’analyse et de comparaison de Pertu : suivi des courants triphasés (déphasages, amplitudes), apprentissage des comportements normaux sur capteurs (pression, conductivité, débit) et détection d’anomalies pour la maintenance préventive/prédictive.
       </p>
 
       <!-- Bannière de confidentialité + soutenance -->
@@ -132,7 +132,6 @@
         <ul class="list-disc pl-5 text-gray-700 space-y-1">
           <li>Upload d’un fichier <b>CSV/TXT</b> (séparateur « ; »), dédoublonnage des noms de colonnes.</li>
           <li>Sélection des colonnes : <b>Temps</b> (obligatoire), <b>IA</b>, <b>IB</b>, <b>IC</b> (optionnelle), <b>Torque</b> (optionnelle).</li>
-          <li><b>Fréquence fixée à 60 Hz</b> pour la phase (FFT).</li>
           <li>Conversion numérique, <code>dropna</code> et tri par temps.</li>
         </ul>
         <div class="mt-3 text-xs bg-blue-50 border-l-4 border-blue-400 p-3 rounded">
