@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Analyse de Pertu - Détails du Projet | Portfolio de KHAOULANI Hamza</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#27DEBF',secondary:'#2563eb'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css">
+ 
+  <title>Analyse de Pertu – ML & Détection</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Remix Icon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet"/>
+
+   <style>
+        .zoom-on-hover {
+            transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+            cursor: pointer;
+        }
+        .zoom-on-hover:hover {
+            transform: scale(1.15);
+            z-index: 10;
+        }
+    </style>
+   
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+  <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-['Pacifico'] text-primary">Portfolio - Alternance GE</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Accueil</a>
+                <a href="index.html#competences" class="text-gray-600 hover:text-primary transition-colors">Compétences</a>
+                <a href="index.html#projets" class="text-gray-600 hover:text-primary transition-colors font-medium">Projets</a>
+                <a href="index.html#contact" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+            </div>
+            <button id="mobileMenuButton" class="md:hidden w-10 h-10 flex items-center justify-center text-gray-500">
+                <i class="ri-menu-line ri-lg"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-600 hover:text-primary transition-colors py-2">Accueil</a>
+                <a href="index.html#competences" class="text-gray-600 hover:text-primary transition-colors py-2">Compétences</a>
+                <a href="index.html#projets" class="text-gray-600 hover:text-primary transition-colors py-2 font-medium">Projets</a>
+                <a href="index.html#contact" class="text-gray-600 hover:text-primary transition-colors py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Retour à la liste des projets -->
+    <div class="container mx-auto px-4 py-6">
+        <a href="index.html#projets" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+            <i class="ri-arrow-left-line ri-lg mr-2"></i>
+            <span>Retour aux projets</span>
+        </a>
+    </div>
+  <!-- Hero -->
+  <section class="bg-white">
+    <div class="container mx-auto px-4 py-10">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 flex items-center gap-3">
+        <span class="text-primary"><i class="ri-line-chart-line"></i></span>
+        Analyse de Pertu – ML & Détection d’anomalies
+      </h1>
+      <p class="mt-3 text-gray-600 max-w-3xl">
+        Application d’analyse et de comparaison de Pertu : suivi des courants triphasés (FFT 50/60&nbsp;Hz, déphasages, amplitudes), apprentissage des comportements normaux sur capteurs (pression, conductivité, débit) et détection d’anomalies pour la maintenance préventive/prédictive.
+      </p>
+
+      <!-- Bannière de confidentialité + soutenance -->
+      <div class="text-center mt-6">
+        <p class="bg-red-50 border border-red-500 text-red-700 px-6 py-3 rounded-lg inline-block font-bold text-base md:text-lg shadow-md">
+          ⚠️ J’ai partagé ici le maximum de détails possibles.<br>
+          Le reste des informations est confidentiel.<br>
+          💻 L’intégralité des fonctionnalités sera présentée lors de ma soutenance, au cours d’une démonstration réelle.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenu principal -->
+  <section class="container mx-auto px-4 py-10">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Colonne principale -->
+      <div class="lg:col-span-2 space-y-10">
+        <!-- 1. Objectif & Contexte (strictement ce que fait le code) -->
+<!-- =========================================================
+=  SECTION 1 — Objectif & Contexte
+========================================================= -->
+<section aria-labelledby="sec-objectif" class="scroll-mt-24">
+  <h2 id="sec-objectif" class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+    1. Objectif & Contexte
+    <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold">C4</span>
+    <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-green-100 text-green-800 text-xs font-semibold">C5</span>
+    <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-purple-100 text-purple-800 text-xs font-semibold">C6</span>
+  </h2>
+
+    <div class="bg-white rounded-xl shadow-sm p-6 md:p-8">
+<div class="flex flex-col md:flex-row-reverse gap-6 items-start">     
+      <figure class="md:col-span-6 relative group">
+        <div class="relative rounded-xl shadow-md overflow-hidden">
+      <!-- Visuel + loupe -->
+      
+          <img src="Image/ML_overview.png" alt="Aperçu de l'app d'analyse"
+               class="object-contain w-full max-h-80" loading="lazy" />
+          <!-- Bouton loupe -->
+          <button type="button"
+            class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition
+                   bg-white/80 hover:bg-white rounded-full p-2 shadow"
+            data-zoom-src="Image/ML_overview.png" aria-label="Agrandir l'image">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z"/>
+            </svg>
+          </button>
+        </div>
+        <figcaption class="mt-2 text-xs text-gray-500">Chargement CSV/TXT, mapping des colonnes, analyses et graphiques.</figcaption>
+      </figure>
+
+      <!-- Texte -->
+      <div class="md:col-span-6 text-sm text-gray-800 space-y-2">
+        <p><b>But :</b> analyser les courants triphasés (IA/IB/IC) et le couple (Torque) pour suivre max, amplitude crête, déphasage et anomalies.</p>
+        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+          <li>Upload d’un fichier <b>CSV/TXT</b> (séparateur « ; »), dédoublonnage des noms de colonnes.</li>
+          <li>Sélection des colonnes : <b>Temps</b> (obligatoire), <b>IA</b>, <b>IB</b>, <b>IC</b> (optionnelle), <b>Torque</b> (optionnelle).</li>
+          <li><b>Fréquence fixée à 60 Hz</b> pour la phase (FFT).</li>
+          <li>Conversion numérique, <code>dropna</code> et tri par temps.</li>
+        </ul>
+        <div class="mt-3 text-xs bg-blue-50 border-l-4 border-blue-400 p-3 rounded">
+          <b>Stack :</b> Python (NumPy/SciPy), Streamlit, Plotly & Matplotlib.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================================
+=  SECTION 2 — Annommalie et KPI
+========================================================= -->
+<section aria-labelledby="sec-kpi-unbalance-vdc" class="scroll-mt-24">
+  <h2 id="sec-kpi-unbalance-vdc" class="text-2xl font-bold text-primary mb-6 mt-10 flex items-center gap-2">
+    2. KPI Unbalance & Vdc – Sélection/Mappage & Vérifications
+    <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-800 text-xs font-semibold">C4</span>
+  </h2>
+
+  <div class="bg-white rounded-xl shadow-sm p-6 md:p-8">
+    <div class="flex flex-col md:flex-row gap-6 items-start">
+
+      <!-- Visuel -->
+      <figure class="md:col-span-6 relative group">
+        <div class="relative rounded-xl shadow-md overflow-hidden">
+          <img src="Image/KPI_Unbalance_Vdc.png" alt="KPI Unbalance & Vdc – mapping et vérifications"
+               class="object-contain w-full max-h-80" loading="lazy" />
+          <button type="button"
+            class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition
+                   bg-white/80 hover:bg-white rounded-full p-2 shadow"
+            data-zoom-src="Image/KPI_Unbalance_Vdc.png" aria-label="Agrandir l'image">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z"/>
+            </svg>
+          </button>
+        </div>
+        <figcaption class="mt-2 text-xs text-gray-500">
+          Mappage automatique/manuel des colonnes, application des règles KPI, affichage ciblé des lignes NOK avec export CSV.
+        </figcaption>
+      </figure>
+
+      <!-- Texte -->
+      <div class="md:col-span-6 space-y-4">
+        <div>
+          <p class="text-sm text-gray-800"><b>Sélection & mappage des colonnes :</b></p>
+          <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+            <li>Recherche automatique des noms attendus (<code>.Iunb.PosSeq</code>, <code>.Iunb.Offset</code>, etc.).</li>
+            <li>Si introuvable, affichage d’un sélecteur manuel pour choisir la colonne.</li>
+            <li>Double jeu de données : <code>df_raw</code> (affichage brut) et <code>df</code> (numérique pour les calculs).</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-sm text-gray-800"><b>Affichage des lignes NOK :</b></p>
+          <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+            <li>Affiche toutes les lignes NOK avec colonnes utiles (temps, KPI fautif, autres valeurs contextuelles).</li>
+            <li>Ajoute <code>row</code> et <code>time_ms</code> (3 décimales).</li>
+            <li>Colore uniquement la cellule du KPI fautif.</li>
+            <li>Injection possible de KPI calculés (ex. <code>Unbalance factor</code>) avec format décimal dynamique.</li>
+            <li>Export CSV des lignes NOK par KPI.</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-sm text-gray-800"><b>Règles de vérification implémentées :</b></p>
+          <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+            <li><b>NegSeq</b> ≤ 0.04</li>
+            <li><b>Unbalance factor</b> = NegSeq / PosSeq ≤ 0.05</li>
+            <li><b>NegSeqH2</b> ≤ 0.04</li>
+            <li><b>Delta Vdc</b> ≤ 0.015</li>
+            <li><b>Curent offset</b> ≤ 0.02</li>
+            <li><b>Iu / Iw</b> : max ≤ 1.0 et min ≥ -1.0</li>
+          </ul>
+        </div>
+
+        <div class="text-xs bg-slate-50 border rounded-lg p-3">
+<pre class="overflow-x-auto text-[11px] leading-5 text-slate-800"><code>// Exemple : Unbalance factor
+ratio = NegSeq / PosSeq
+mask  = ratio &gt; 0.05
+if mask.any():
+    show_fail_context(mask, "Unbalance factor", "_Unbalance factor", computed_series=ratio)
+
+// Exemple : Curent offset
+mask_off = Offset &gt; 0.02
+if mask_off.any():
+    show_fail_context(mask_off, "Curent offset", Offset)</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+=  SECTION 2 — Comparaison de Pertu (Courants)
+========================================================= -->
+<section aria-labelledby="sec-pertu" class="scroll-mt-24">
+  <h2 id="sec-pertu" class="text-2xl font-bold text-primary mb-6 mt-10 flex items-center gap-2">
+    3. Comparaison de Pertu (Courants)
+    <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold">C4</span>
+  </h2>
+
+  <div class="bg-white rounded-xl shadow-sm p-6 md:p-8">
+<div class="flex flex-col md:flex-row-reverse gap-6 items-start">     
+      <figure class="md:col-span-6 relative group">
+        <div class="relative rounded-xl shadow-md overflow-hidden">
+          <img src="Image/FFT_60Hz.png" alt="Courants et fenêtres glissantes"
+               class="object-contain w-full max-h-80" loading="lazy" />
+          <button type="button"
+            class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition
+                   bg-white/80 hover:bg-white rounded-full p-2 shadow"
+            data-zoom-src="Image/FFT_60Hz.png" aria-label="Agrandir l'image">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z"/>
+            </svg>
+          </button>
+        </div>
+        <p class="mt-2 text-xs text-gray-500">Courbes Plotly des courants IA/IB/IC sur tout le jeu de données conservé.</p>
+      </figure>
+
+      <!-- Texte -->
+      <div class="md:col-span-6 text-sm text-gray-800 space-y-2">
+        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+          <li>Affichage des courants <b>IA/IB/IC</b> vs <b>Temps</b>.</li>
+          <li><b>Fenêtre glissante</b> (slider en secondes) → taille en points <code>w</code> via <b>Δt médian</b>.</li>
+          <li>Par phase : <code>{phase}_max</code> (rolling max) et <code>{phase}_amp</code> (max |x| sur la fenêtre).</li>
+          <li>Moyennes de <code>{phase}_max</code> et <code>{phase}_amp</code> ; statut vs <b>seuil amplitude crête</b>.</li>
+          <li>Graphiques Matplotlib par phase : signal, max roulant, amplitude crête.</li>
+        </ul>
+
+        <div class="mt-3 text-xs bg-slate-50 border rounded-lg p-3">
+<pre class="overflow-x-auto text-[11px] leading-5 text-slate-800"><code>// w via slider (s) et Δt médian
+{phase}_max = rolling_max(signal, w)
+{phase}_amp = rolling_max(abs(signal), w)
+// Moyennes & statut par rapport au seuil_amp</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================================
+=  SECTION 3 — Déphasage (FFT 60 Hz) & Anomalies vs Couple
+========================================================= -->
+<section aria-labelledby="sec-phase" class="scroll-mt-24">
+  <h2 id="sec-phase" class="text-2xl font-bold text-primary mb-6 mt-10 flex items-center gap-2">
+    4. Déphasage (passages par zéro – sans fréquence imposée) & Anomalies vs Couple
+    <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold">C4</span>
+  </h2>
+
+
+  <div class="bg-white rounded-xl shadow-sm p-6 md:p-8">
+    <div class="flex flex-col md:flex-row gap-6 items-start">
+      <!-- Visuel + loupe -->
+      <figure class="md:col-span-6 relative group">
+        <div class="relative rounded-xl shadow-md overflow-hidden">
+          <img src="Image/Phase_Anomalies.png" alt="Déphasage par passages par zéro et anomalies amplitude vs couple"
+               class="object-contain w-full max-h-80" loading="lazy" />
+          <button type="button"
+            class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition
+                   bg-white/80 hover:bg-white rounded-full p-2 shadow"
+            data-zoom-src="Image/Phase_Anomalies.png" aria-label="Agrandir l'image">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z"/>
+            </svg>
+          </button>
+        </div>
+        <figcaption class="mt-2 text-xs text-gray-500">
+          Déphasage via passages par zéro (montants), estimation automatique de la période et marquage des anomalies.
+        </figcaption>
+      </figure>
+
+      <!-- Texte -->
+      <div class="md:col-span-6 space-y-4">
+        <div>
+          <p class="text-sm text-gray-800"><b>Déphasage par passages par zéro (méthode robuste, sans 50/60 Hz imposé) :</b></p>
+          <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+            <li>Détection des <b>passages par zéro montants</b> sur chaque phase, avec <b>interpolation linéaire</b> du temps exact.</li>
+            <li>Estimation de la <b>période T</b> via la moyenne des intervalles entre zéros consécutifs (nettoyage des outliers par IQR).</li>
+            <li>Pour chaque paire (IA‑IB, IB‑IC, IA‑IC) : on associe les zéros les plus proches et on calcule <b>&Delta;t</b>.</li>
+            <li><b>Angle</b> : &phi; = ( &Delta;t / T ) × 360°, repli dans [-180°, 180°]. Affichage ✅/⚠️ selon l’attendu (≈120°).</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-sm text-gray-800"><b>Anomalies amplitude vs torque (si torque sélectionné) :</b></p>
+          <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+            <li><code>amp_diff = diff(amp_crête_phase_ref)</code> lissé (moyenne roulante, valeur absolue).</li>
+            <li><code>torque_diff = diff(Torque)</code> lissé (moyenne roulante, valeur absolue).</li>
+            <li>Anomalie si <b>amp_diff &gt; seuil</b> ET <b>torque_diff &lt; (seuil% × |Torque|)</b> (couple stable).</li>
+            <li>Compteur d’anomalies + marquage visuel des points (Plotly).</li>
+          </ul>
+        </div>
+
+        <div class="text-xs bg-slate-50 border rounded-lg p-3">
+<pre class="overflow-x-auto text-[11px] leading-5 text-slate-800"><code>// Déphasage par passages par zéro
+x1 = signal_A - mean(signal_A)
+x2 = signal_B - mean(signal_B)
+tz1 = zeros_montants_interpolés(t, x1)
+tz2 = zeros_montants_interpolés(t, x2)
+T   = mean_period(clean(diff(tz1)), clean(diff(tz2)))
+for ti in tz1:
+  tj   = zéro_de_x2_le_plus_proche_de(ti)
+  dt   = wrap_to_0_T(tj - ti, T)
+  phi += 360 * dt / T
+phi_deg = fold_to_pm180(mean_robuste(phi))
+
+// Anomalies (si torque)
+amp_diff    = abs(rolling_mean(diff(amp_phase_ref), w))
+torque_diff = abs(rolling_mean(diff(Torque), w))
+flag = (amp_diff &gt; thr_amp_diff) &amp;&amp; (torque_diff &lt; thr_torque% * abs(Torque))</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section id="perspectives" class="mt-24">
+  <h2 class="text-4xl font-bold text-center text-primary mb-12 tracking-tight">🚀 Roadmap Technique – Futur du Projet</h2>
+  <div class="space-y-10">
+
+    <!-- Bloc ML avancé -->
+    <div class="bg-white border-l-8 border-blue-500 rounded-xl shadow-lg p-8 hover:shadow-xl transition duration-300">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="text-4xl">🧠</div>
+        <h3 class="text-2xl font-semibold text-blue-800">Surveillance intelligente des capteurs</h3>
+      </div>
+      <p class="text-gray-700 mb-4 text-sm italic">Application du Machine Learning pour analyser et anticiper les dérives de comportement.</p>
+      <ul class="space-y-3 text-gray-800 text-base list-inside list-disc">
+        <li><b>🔌 Contacteurs / disjoncteurs :</b> Clustering non supervisé pour apprendre le comportement normal. Détection d’anomalies si les cycles deviennent trop rapides.</li>
+        <li><b>💧 Capteur de pression :</b> Modèles de régression (ex: LSTM) pour apprendre les cycles de remplissage et identifier les anomalies de type fuite ou comportement irrégulier.</li>
+        <li><b>🧪 Capteur de conductivité :</b> Analyse temporelle de la dérive avec Isolation Forest. Une montée du seuil bas indique une cartouche dégradée.</li>
+        <li><b>🚰 Capteur de débit :</b>
+          <ul class="list-disc pl-6">
+            <li>Variation excessive → air dans le circuit (analyse statistique).</li>
+            <li>Baisse progressive → régression linéaire pour détecter fuite ou usure pompe.</li>
+            <li>Corrélation avec pression pour croiser les données et renforcer l’interprétation.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Bloc Maintenance prédictive -->
+    <div class="bg-white border-l-8 border-green-500 rounded-xl shadow-lg p-8 hover:shadow-xl transition duration-300">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="text-4xl">🛠️</div>
+        <h3 class="text-2xl font-semibold text-green-800">Maintenance préventive et prédictive</h3>
+      </div>
+      <p class="text-gray-700 mb-4 text-sm italic">Basé sur l’historique d’utilisation et les cycles d’activité terrain.</p>
+      <ul class="space-y-3 text-gray-800 text-base list-inside list-disc">
+        <li><b>⏱️ Compteurs d’usure :</b> Suivi précis du nombre de cycles, temps de fonctionnement et ouvertures/fermetures de contacteurs, y compris arrêts sur <code>trip</code>.</li>
+        <li><b>🤖 Modélisation prédictive :</b> Utilisation de modèles de classification comme Random Forest et SVM pour prédire les pannes potentielles à venir.</li>
+        <li><b>📐 Seuils dynamiques :</b> Calculs adaptatifs par moyenne glissante et écart-type pour détecter des dérives subtiles non visibles avec un seuil fixe.</li>
+        <li><b>📊 Interface enrichie :</b> Visualisation graphique, timeline, marquage des anomalies, export CSV, et filtres dynamiques pour faciliter l’analyse terrain.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================================
+=  MODAL ZOOM (commun aux 3 sections)
+========================================================= -->
+<div id="imgModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/75 p-4">
+  <div class="relative max-w-6xl w-full">
+    <button type="button" id="modalClose"
+            class="absolute -top-3 -right-3 bg-white rounded-full p-2 shadow"
+            aria-label="Fermer l'aperçu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+           fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    <img id="modalImg" src="" alt="Aperçu agrandi" class="w-full h-auto rounded-lg shadow-lg" />
+  </div>
+</div>
+
+<script>
+  // Ouvre le modal avec l'image ciblée
+  const modal = document.getElementById('imgModal');
+  const modalImg = document.getElementById('modalImg');
+  const closeBtn = document.getElementById('modalClose');
+
+  // Tous les boutons loupe
+  document.querySelectorAll('button[data-zoom-src]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const src = btn.getAttribute('data-zoom-src');
+      modalImg.src = src;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    });
+  });
+
+  // Fermeture
+  const closeModal = () => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    modalImg.src = '';
+  };
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal(); // clic en dehors de l'image
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+  });
+</script>
+
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="space-y-8">
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+          <h2 class="text-xl font-bold text-gray-800 mb-4">Informations Techniques</h2>
+          <ul class="list-disc pl-5 text-gray-700 mb-6">
+             <li><i class="ri-brain-line text-indigo-600 mr-2"></i> Analyse par passages par zéro (montants) avec interpolation et période estimée automatiquement</li>
+      <li><i class="ri-bar-chart-2-line text-blue-600 mr-2"></i> Fenêtres glissantes, calcul RMS/Peak et seuils adaptatifs</li>
+      <li><i class="ri-slideshow-2-line text-yellow-600 mr-2"></i> Streamlit + Plotly (zoom/hover, marquage d’événements et anomalies)</li>
+      <li><i class="ri-database-2-line text-green-600 mr-2"></i> Entrées CSV/TXT ; export des points suspects et résultats de déphasage</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+          <h2 class="text-xl font-bold text-gray-800 mb-4">Signification des compétences</h2>
+          <ul class="space-y-4">
+            <li class="flex items-center">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold mr-3">C4</span>
+              <span class="text-gray-700 text-sm">Gérer des données de l'information (structuration, extraction, fiabilité, analyse)</span>
+            </li>
+            <li class="flex items-center">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-800 text-xs font-semibold mr-3">C5</span>
+              <span class="text-gray-700 text-sm">Conduire un projet (besoins, itérations, documentation, déploiement)</span>
+            </li>
+            <li class="flex items-center">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-purple-100 text-purple-800 text-xs font-semibold mr-3">C6</span>
+              <span class="text-gray-700 text-sm">Collaborer (UX, support, transfert, bonnes pratiques)</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm p-6">
+          <h2 class="text-xl font-bold text-gray-800 mb-4">Contact & Documentation</h2>
+          <ul class="space-y-4">
+            <li>
+              <a href="mailto:hamza.khaoulani@etu.univ-lemans.fr" class="flex items-center text-black hover:text-primary/80 transition-colors">
+                <div class="w-8 h-8 flex items-center justify-center text-pink-600 mr-3">
+                  <i class="ri-mail-line ri-lg"></i>
+                </div>
+                <span>Contactez-moi</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank" class="flex items-center text-black hover:text-primary/80 transition-colors">
+                <div class="w-8 h-8 flex items-center justify-center text-indigo-600 mr-3">
+                  <i class="ri-file-pdf-line ri-lg"></i>
+                </div>
+                <span>Documentation technique</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="index.html" class="text-2xl font-['Pacifico'] text-white">Hamza</a>
+                    <p class="mt-2 text-gray-400">Développeur Automatisation & Data</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <i class="ri-github-fill ri-lg"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <i class="ri-linkedin-box-fill ri-lg"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <i class="ri-mail-fill ri-lg"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 KHAOULANI Hamza. Tous droits réservés.</p>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors mr-6">Politique de confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+  <script>
+    // Effet d’apparition cohérent avec scope.html
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
